@@ -94,15 +94,6 @@ To showcase your use of the fundamental Computer Science skills by creating a Te
 
 ---
 
-### Vocab (5)
-- Variable: A value in your computer that can be stored and manipulated.
-- Integer: Whole number.
-- Floating Point: Decimal number with an unfixed point.
-- Boolean: True or false value.
-- String: A collection of characters to form words or phrases.
-
----
-
 ### Evaluation Procedure
 1. Every time you feel like you've mastered a skill up until the project is due, let me know and I will do a quick evaluation. Based on the standards below, you will be given a score from 0 - 4 on that skill. You can get a new score on any skill at any time, your grade is never set in stone and I encourage you to try and master every single skill. Your score for each skill will be recorded until the project is due.
     - No Attempt (0): The skill was not used or attempted in any way in your project.
