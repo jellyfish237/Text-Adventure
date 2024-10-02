@@ -22,7 +22,7 @@ To showcase your use of the fundamental Computer Science skills by creating a Te
 
 3. Open the project's Solution (.sln) file using Visual Studio 2022. You can now begin writing and editing code.
 
-4. There are a multitude of tutorial videos you need to follow to learn the skills for this project. Click [this link](https://sites.google.com/mukilteo.wednet.edu/si-vgd/skills-study) and scroll down to Intro to Programming to get started. I suggest watching the videos in order.
+4. There are a multitude of tutorial videos you need to follow to learn the skills for this project. Click [this link](https://sites.google.com/mukilteo.wednet.edu/si-vgd/skills-study) and scroll down to 'Intro to Programming' to get started. I suggest watching the videos in order.
 
 5. Every day, before you leave class, stage, commit, and push to GitHub.
 
