@@ -32,27 +32,16 @@ To showcase your use of the fundamental Computer Science skills by creating a Te
 | Skill    | Introductory (1) | Developing (2) | Proficient (3) | Advanced (4) |
 | -------- | ----------------------------------- | -------------------------------- | --------------------------- | ----------------------------- |
 | **CS.PRC.1: Create and Manipulate Variables of Simple Types**<br><br>- Create and Initialize Variables<br>- Read the Value of Variables<br>- Change the Value of Variables | Student may be able to describe what a variable is in computer science, but can't yet create, read, or manipulate the value of one | Student can explain what a variable is in computer science and can create, read, or manipulate the value of one, but not yet consistently or efficiently | Student understands exactly what a variable is in computer science and can consistently and efficiently create, read, and manipulate the value of one | Student can do all of the above, as well as teach it to someone else, generalize it to another software, and/or implement their own unique example of how to use them |
-
 | **CS.PRC.2: Convert Between Simple Data Types**<br><br>- Use Type Casting to Switch Between Types<br>- Use System.Convert For More Reliabiilty<br>- Understand How Type Conversion Works | | | | |
-
 | **CS.PRC.3: Read and Write Data From the Console**<br><br>- Print Messages to the Console<br>- Read Messages From the Console<br>- Change the Console's Colors | | | | |
-
 | **CS.PRC.4: Use Comments to Document and Disable Code**<br><br>- Use Single-Line Comments for Information<br>- Use Multi-Line Comments for Disabling<br>- Use XML Comments for Documentation | | | | |
-
 | **CS.PRC.5: Use Operators on Simple Data Types**<br><br>- Use Arithmetic Operators<br>- Use Comparison Operators<br>- Use Boolean Logic Operators | | | | |
-
 | **CS.PRC.6: Control the Flow of Code Using Conditional Blocks**<br><br>- Use If Statements to Run Code Blocks<br>- Use Else/Else If Statements to Other Blocks<br>- Use Switch Statements to Branch Code | | | | |
-
 | **CS.PRC.7: Create and Call Functions With Inputs and Outputs**<br><br>- Create and Call Simple Functions<br>- Call a Function that Uses Parameters<br>- Call a Function that Returns an Output | | | | |
-
 | **CS.PRC.8: Group Related Variables Together Using Structs**<br><br>- Create Structs that Group Variables<br>- Read Values From a Struct<br>- Understand How Passing by Value Works | | | | |
-
 | **CS.PRC.9: Use Enums to Represent Mututally Exclusive States**<br><br>- Define an Enum With Values<br>- Create and Initialize an Enum Instance<br>- Read the Value of an Enum | | | | |
-
 | **CS.PRC.10: Create and Manipulate Fixed-Sized Collections Using Arrays**<br><br>- Create and Initialize Arrays of Any Type<br>- Change the Value in a Slot of an Array<br>- Read the Value in a Slot of an Array | | | | |
-
 | **CS.PRC.11: Repeat Code Execution Using Conditional Loops**<br><br>- Use For Loops that Run A Set # of Times<br>- Use While Loops that Run If a Value is True<br>- Call a Function From Itself with Recursion | | | | |
-
 | **CS.PRC.12: Debug a Program Using Modern Debugging Features**<br><br>- Use Breakpoints on Specific Lines<br>- Use Watch Windows to Check Values<br>- Use the Call Stack to Check Function Calls | | | | |
 
 ---
