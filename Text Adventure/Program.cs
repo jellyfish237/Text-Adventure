@@ -46,14 +46,14 @@ namespace Text_Adventure
             Console.WindowHeight = 54;
             Console.WriteLine(" ░▒ Perilous Trail ▒░");
             Thread.Sleep(1000);
-            Console.ForegroundColor = ConsoleColor.DarkRed;
-            Console.WriteLine(" WARNING: Don't use inputs unless instructed, otherwise the game will continue unexceptly without your inputs, this includes holding down or spamming inputs. \r\n >>> this is caused by the console's engine and can't be fixed <<<");
-            Thread.Sleep(6000);
             new_enemy();
         }
 
         static void new_enemy()
         {
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine(" REMINDER: Don't use inputs unless instructed, otherwise the game will continue unexceptly without your inputs, this includes holding down or spamming inputs. \r\n >>> this is caused by the console's engine and can't be fixed <<<");
+            Thread.Sleep(6000);
             player.hp = player.max_hp;
             player.stamina = player.max_stamina;
             Console.ForegroundColor = ConsoleColor.White;
