@@ -1,4 +1,5 @@
-﻿using static System.Net.Mime.MediaTypeNames;
+﻿using System.Linq.Expressions;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Text_Adventure
 {
@@ -40,14 +41,13 @@ namespace Text_Adventure
 
         static void Main(string[] args)
         {
-
-
             Console.ForegroundColor = ConsoleColor.White;
-            Console.WindowWidth = 160;
-            Console.WindowHeight = 45;
+            Console.WindowWidth = 192;
+            Console.WindowHeight = 54;
             Console.WriteLine(" ░▒ Perilous Trail ▒░");
             Thread.Sleep(1000);
-            Console.WriteLine(" WARNING: Don't use inputs unless instructed, otherwise the game will continue unexceptly without your inputs, this includes holding down or spamming inputs. \r\n >>> this is caused by the console's engine and can't be fixed <<< \r\n clicking the console pauses the game, click the console again to unpause");
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine(" WARNING: Don't use inputs unless instructed, otherwise the game will continue unexceptly without your inputs, this includes holding down or spamming inputs. \r\n >>> this is caused by the console's engine and can't be fixed <<<");
             Thread.Sleep(6000);
             new_enemy();
         }
@@ -56,11 +56,15 @@ namespace Text_Adventure
         {
             player.hp = player.max_hp;
             player.stamina = player.max_stamina;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine(" ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒");
             Thread.Sleep(400);
             Console.WriteLine(" Progress: " + progress);
             Thread.Sleep(400);
             Console.WriteLine(" Gold: " + gold);
             Thread.Sleep(400);
+            Console.WriteLine(" ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒");
+            Thread.Sleep(800);
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(" ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\r\n Something approaches you...\r\n");
             Thread.Sleep(1500);
@@ -68,8 +72,8 @@ namespace Text_Adventure
             Thread.Sleep(800);
             enemy.max_hp = 100.0f * progress;
             enemy.hp = 100.0f * progress;
-            enemy.stamina = 150 * progress * 0.5f;
-            enemy.max_stamina = 150 * progress * 0.5f;
+            enemy.stamina = 100.0f;
+            enemy.max_stamina = 100.0f;
             Console.WriteLine("\r\n Enemy Health: " + enemy.hp + "/" + enemy.max_hp);
             Thread.Sleep(150);
             Console.WriteLine(" Enemy Stamina: " + enemy.stamina + "/" + enemy.max_stamina);
@@ -98,11 +102,11 @@ namespace Text_Adventure
                 Thread.Sleep(150);
                 Console.WriteLine("\r\n Z to Attack      | Deal " + player.damage + " damage, unless the enemy parries");
                 Thread.Sleep(150);
-                Console.WriteLine(" X to Use Ability | Robbery: Do a cheap move and steal some of the enemy's gold. This move can be parried, but you won't be stunned");
+                Console.WriteLine(" X to Rob         | Do a cheap move and steal 100 gold from the enemy, steal double the gold if the enemy rests. This move can be parried, but you won't be stunned");
                 Thread.Sleep(150);
                 Console.WriteLine(" C to Parry       | Costs 30 Stamina, If the enemy attacks or uses certain items againist you this turn, You'll cancel their move");
                 Thread.Sleep(150);
-                Console.WriteLine(" V to Rest        | Recover 30 Stamina and recover " + (int)(player.max_hp * 0.3f) + " Health, but take 30% more damage and become more vulernable to certain abilities this turn");
+                Console.WriteLine(" V to Rest        | Recover 30 Stamina and recover " + (int)(player.max_hp * 0.3f) + " Health, but take 30% more damage and become more vulernable to being robbed");
                 Thread.Sleep(150);
                 Console.WriteLine(" ---------------------------------------------------------------");
                 int players_move = make_choice();
@@ -177,8 +181,8 @@ namespace Text_Adventure
                     if (player.ability == "Robbery")
                     {
                         Thread.Sleep(800);
-                        Console.WriteLine(" You did a cheap move and stole 60 gold");
-                        gold += 60;
+                        Console.WriteLine(" You did a cheap move and stole 100 gold");
+                        gold += 100;
                         Thread.Sleep(800);
                         Console.WriteLine(" Gold: " + (int)gold);
                     }
@@ -230,8 +234,8 @@ namespace Text_Adventure
                     if (player.ability == "Robbery")
                     {
                         Thread.Sleep(800);
-                        Console.WriteLine(" You did a cheap move and stole 60 gold!");
-                        gold += 60;
+                        Console.WriteLine(" You did a cheap move and stole 100 gold!");
+                        gold += 100;
                         Thread.Sleep(800);
                         Console.WriteLine(" Gold: " + (int)gold);
                     }
@@ -297,8 +301,8 @@ namespace Text_Adventure
                         else
                         {
                             Thread.Sleep(800);
-                            Console.WriteLine(" You did a cheap move and stole 60 gold!");
-                            gold += 60;
+                            Console.WriteLine(" You did a cheap move and stole 100 gold!");
+                            gold += 100;
                             Thread.Sleep(800);
                             Console.WriteLine(" Gold: " + (int)gold);
                             Thread.Sleep(800);
@@ -374,8 +378,8 @@ namespace Text_Adventure
                     if (player.ability == "Robbery")
                     {
                         Thread.Sleep(800);
-                        Console.WriteLine(" You did a cheap move while the enemy had it's guard down and stole 100 gold!");
-                        gold += 100;
+                        Console.WriteLine(" You did a cheap move while the enemy had it's guard down and stole 200 gold!");
+                        gold += 200;
                         Thread.Sleep(800);
                         Console.WriteLine(" Gold: " + (int)gold);
                     }
@@ -469,9 +473,9 @@ namespace Text_Adventure
             Thread.Sleep(1200);
             gold_change(0);
             Thread.Sleep(500);
-            Console.WriteLine(" \r\n PRESS Z TO BUY: Health Potion | Generic rpg game health boost, gain +100 max health once bought ||| COST: 400 gold");
+            Console.WriteLine(" \r\n PRESS Z TO BUY: Health Potion | Generic rpg game health boost, gain +100 max health once bought ||| COST: " + (int)(400 * progress * 0.5f) + " gold");
             Thread.Sleep(500);
-            Console.WriteLine(" \r\n PRESS X TO BUY: Attack Potion | Generic rpg game damage boost, gain +30 damage once bought ||| COST: 400 gold");
+            Console.WriteLine(" \r\n PRESS X TO BUY: Attack Potion | Generic rpg game damage boost, gain +50 damage once bought ||| COST: " + (int)(400 * progress * 0.5f) + " gold");
             buy_something();
 
             static int buy_something()
@@ -481,12 +485,12 @@ namespace Text_Adventure
                 switch (letter)
                 {
                     case 'z':
-                        Console.WriteLine(" You gained 100 max health");
-                        Thread.Sleep(500);
-                        if (gold > 400)
+                        if (gold > (int)(400 * progress * 0.5f))
                         {
+                            Console.WriteLine(" You gained 100 max health");
+                            Thread.Sleep(500);
                             player.max_hp += 100;
-                            gold -= 400;
+                            gold -= (int)(400 * progress * 0.5f);
                             Console.WriteLine(" ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒");
                             new_enemy();
                         }
@@ -498,12 +502,12 @@ namespace Text_Adventure
                         }
                         return 0;
                     case 'x':
-                        Console.WriteLine(" You gained 30 damage");
-                        Thread.Sleep(500);
-                        if (gold > 400)
+                        if (gold > (int)(400 * progress * 0.5f))
                         {
-                            player.damage += 30;
-                            gold -= 400;
+                            Console.WriteLine(" You gained 50 damage");
+                            Thread.Sleep(500);
+                            player.damage += 50;
+                            gold -= (int)(400 * progress * 0.5f);
                             Console.WriteLine(" ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒");
                             new_enemy();
 
