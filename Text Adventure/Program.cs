@@ -68,7 +68,7 @@ namespace Text_Adventure
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(" ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\r\n Something approaches you...\r\n");
             Thread.Sleep(1500);
-            Console.WriteLine(" ░░░░▄▄▄▄▀▀▀▀▀▀▀▀▄▄▄▄▄▄\r\n ░░░░█░░░░▒▒▒▒▒▒▒▒▒▒▒▒░░▀▀▄\r\n ░░░█░░░▒▒▒▒▒▒░░░░░░░░▒▒▒░░█\r\n ░░█░░░░░░▄██▀▄▄░░░░░▄▄▄░░░█\r\n ░▀▒▄▄▄▒░█▀▀▀▀▄▄█░░░██▄▄█░░░█\r\n █▒█▒▄░▀▄▄▄▀░░░░░░░░█░░░▒▒▒▒▒█\r\n █▒█░█▀▄▄░░░░░█▀░░░░▀▄░░▄▀▀▀▄▒█\r\n ░█▀▄░█▄░█▀▄▄░▀░▀▀░▄▄▀░░░░█░░█\r\n ░░█░░▀▄▀█▄▄░█▀▀▀▄▄▄▄▀▀█▀██░█\r\n ░░░█░░██░░▀█▄▄▄█▄▄█▄████░█\r\n ░░░░█░░░▀▀▄░█░░░█░███████░█\r\n ░░░░░▀▄░░░▀▀▄▄▄█▄█▄█▄█▄▀░░█\r\n ░░░░░░░▀▄▄░▒▒▒▒░░░░░░░░░░█\r\n ░░░░░░░░░░▀▀▄▄░▒▒▒▒▒▒▒▒▒▒░█\r\n ░░░░░░░░░░░░░░▀▄▄▄▄▄░░░░░█");
+            Console.WriteLine(" \r\n░░░░░▄▄▄▄▀▀▀▀▀▀▀▀▄▄▄▄▄▄░░░░░░░\r\n░░░░░█░░░░▒▒▒▒▒▒▒▒▒▒▒▒░░▀▀▄░░░░\r\n░░░░█░░░▒▒▒▒▒▒░░░░░░░░▒▒▒░░█░░░\r\n░░░█░░░░░░▄██▀▄▄░░░░░▄▄▄░░░░█░░\r\n░▄▀▒▄▄▄▒░█▀▀▀▀▄▄█░░░██▄▄█░░░░█░\r\n█░▒█▒▄░▀▄▄▄▀░░░░░░░░█░░░▒▒▒▒▒░█\r\n█░▒█░█▀▄▄░░░░░█▀░░░░▀▄░░▄▀▀▀▄▒█\r\n░█░▀▄░█▄░█▀▄▄░▀░▀▀░▄▄▀░░░░█░░█░\r\n░░█░░░▀▄▀█▄▄░█▀▀▀▄▄▄▄▀▀█▀██░█░░\r\n░░░█░░░░██░░▀█▄▄▄█▄▄█▄████░█░░░\r\n░░░░█░░░░▀▀▄░█░░░█░█▀██████░█░░\r\n░░░░░▀▄░░░░░▀▀▄▄▄█▄█▄█▄█▄▀░░█░░\r\n░░░░░░░▀▄▄░▒▒▒▒░░░░░░░░░░▒░░░█░\r\n░░░░░░░░░░▀▀▄▄░▒▒▒▒▒▒▒▒▒▒░░░░█░\r\n░░░░░░░░░░░░░░▀▄▄▄▄▄░░░░░░░░█░░");
             Thread.Sleep(800);
             enemy.max_hp = 100.0f * progress;
             enemy.hp = 100.0f * progress;
@@ -106,7 +106,7 @@ namespace Text_Adventure
                 Thread.Sleep(150);
                 Console.WriteLine(" C to Parry       | Costs 30 Stamina, If the enemy attacks or uses certain items againist you this turn, You'll cancel their move");
                 Thread.Sleep(150);
-                Console.WriteLine(" V to Rest        | Recover 30 Stamina and recover " + (int)(player.max_hp * 0.3f) + " Health, but take 30% more damage and become more vulernable to being robbed");
+                Console.WriteLine(" V to Rest        | Recover 30 Stamina and " + (int)(player.max_hp * 0.2f) + " Health, but take 30% more damage and become more vulernable to being robbed");
                 Thread.Sleep(150);
                 Console.WriteLine(" ---------------------------------------------------------------");
                 int players_move = make_choice();
@@ -134,10 +134,10 @@ namespace Text_Adventure
                     stamina_change(30);
                     return 3;
                 case 'v':
-                    Console.WriteLine(" You rest, recovered " + (int)(player.max_hp * 0.3f) + " Health and 30 stamina");
+                    Console.WriteLine(" You rest, recovered " + (int)(player.max_hp * 0.2f) + " Health and 30 stamina");
                     Thread.Sleep(800);
                     stamina_change(-30);
-                    health_change(-player.max_hp * 0.3f);
+                    health_change(-player.max_hp * 0.2f);
                     return 4;
                 default:
                     return make_choice();
@@ -150,7 +150,7 @@ namespace Text_Adventure
             Console.WriteLine(" ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒");
             Console.WriteLine(" Enemy's Turn.");
             Thread.Sleep(800);
-            Console.WriteLine(" \r\n ░░░░▄▄▄▄▀▀▀▀▀▀▀▀▄▄▄▄▄▄\r\n ░░░░█░░░░▒▒▒▒▒▒▒▒▒▒▒▒░░▀▀▄\r\n ░░░█░░░▒▒▒▒▒▒░░░░░░░░▒▒▒░░█\r\n ░░█░░░░░░▄██▀▄▄░░░░░▄▄▄░░░█\r\n ░▀▒▄▄▄▒░█▀▀▀▀▄▄█░░░██▄▄█░░░█\r\n █▒█▒▄░▀▄▄▄▀░░░░░░░░█░░░▒▒▒▒▒█\r\n █▒█░█▀▄▄░░░░░█▀░░░░▀▄░░▄▀▀▀▄▒█\r\n ░█▀▄░█▄░█▀▄▄░▀░▀▀░▄▄▀░░░░█░░█\r\n ░░█░░▀▄▀█▄▄░█▀▀▀▄▄▄▄▀▀█▀██░█\r\n ░░░█░░██░░▀█▄▄▄█▄▄█▄████░█\r\n ░░░░█░░░▀▀▄░█░░░█░███████░█\r\n ░░░░░▀▄░░░▀▀▄▄▄█▄█▄█▄█▄▀░░█\r\n ░░░░░░░▀▄▄░▒▒▒▒░░░░░░░░░░█\r\n ░░░░░░░░░░▀▀▄▄░▒▒▒▒▒▒▒▒▒▒░█\r\n ░░░░░░░░░░░░░░▀▄▄▄▄▄░░░░░█\r\n");
+            Console.WriteLine(" \r\n░░░░░▄▄▄▄▀▀▀▀▀▀▀▀▄▄▄▄▄▄░░░░░░░\r\n░░░░░█░░░░▒▒▒▒▒▒▒▒▒▒▒▒░░▀▀▄░░░░\r\n░░░░█░░░▒▒▒▒▒▒░░░░░░░░▒▒▒░░█░░░\r\n░░░█░░░░░░▄██▀▄▄░░░░░▄▄▄░░░░█░░\r\n░▄▀▒▄▄▄▒░█▀▀▀▀▄▄█░░░██▄▄█░░░░█░\r\n█░▒█▒▄░▀▄▄▄▀░░░░░░░░█░░░▒▒▒▒▒░█\r\n█░▒█░█▀▄▄░░░░░█▀░░░░▀▄░░▄▀▀▀▄▒█\r\n░█░▀▄░█▄░█▀▄▄░▀░▀▀░▄▄▀░░░░█░░█░\r\n░░█░░░▀▄▀█▄▄░█▀▀▀▄▄▄▄▀▀█▀██░█░░\r\n░░░█░░░░██░░▀█▄▄▄█▄▄█▄████░█░░░\r\n░░░░█░░░░▀▀▄░█░░░█░█▀██████░█░░\r\n░░░░░▀▄░░░░░▀▀▄▄▄█▄█▄█▄█▄▀░░█░░\r\n░░░░░░░▀▄▄░▒▒▒▒░░░░░░░░░░▒░░░█░\r\n░░░░░░░░░░▀▀▄▄░▒▒▒▒▒▒▒▒▒▒░░░░█░\r\n░░░░░░░░░░░░░░▀▄▄▄▄▄░░░░░░░░█░░");
             Random rng = new Random();
             int move = rng.Next(1, 5);
 
@@ -465,11 +465,13 @@ namespace Text_Adventure
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine(" ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒");
             Thread.Sleep(800);
-            Console.WriteLine(" ░░░░▄▄▄▄▀▀▀▀▀▀▀▀▄▄▄▄▄▄\r\n ░░░░█░░░░▒▒▒▒▒▒▒▒▒▒▒▒░░▀▀▄\r\n ░░░█░░░▒▒▒▒▒▒░░░░░░░░▒▒▒░░█\r\n ░░█░░░░░░▄██▀▄▄░░░░░▄▄▄░░░█\r\n ░▀▒▄▄▄▒░█▀▀▀▀▄▄█░░░██▄▄█░░░█\r\n █▒█▒▄░▀▄▄▄▀░░░░░░░░█░░░▒▒▒▒▒█\r\n █▒█░█▀▄▄░░░░░█▀░░░░▀▄░░▄▀▀▀▄▒█\r\n ░█▀▄░█▄░█▀▄▄░▀░▀▀░▄▄▀░░░░█░░█\r\n ░░█░░▀▄▀█▄▄░█▀▀▀▄▄▄▄▀▀█▀██░█\r\n ░░░█░░██░░▀█▄▄▄█▄▄█▄████░█\r\n ░░░░█░░░▀▀▄░█░░░█░███████░█\r\n ░░░░░▀▄░░░▀▀▄▄▄█▄█▄█▄█▄▀░░█\r\n ░░░░░░░▀▄▄░▒▒▒▒░░░░░░░░░░█\r\n ░░░░░░░░░░▀▀▄▄░▒▒▒▒▒▒▒▒▒▒░█\r\n ░░░░░░░░░░░░░░▀▄▄▄▄▄░░░░░█");
+            Console.WriteLine(" Travelling merchant");
+            Thread.Sleep(800);
+            Console.WriteLine(" \r\n░░░░░▄▄▄▄▀▀▀▀▀▀▀▀▄▄▄▄▄▄░░░░░░░\r\n░░░░░█░░░░▒▒▒▒▒▒▒▒▒▒▒▒░░▀▀▄░░░░\r\n░░░░█░░░▒▒▒▒▒▒░░░░░░░░▒▒▒░░█░░░\r\n░░░█░░░░░░▄██▀▄▄░░░░░▄▄▄░░░░█░░\r\n░▄▀▒▄▄▄▒░█▀▀▀▀▄▄█░░░██▄▄█░░░░█░\r\n█░▒█▒▄░▀▄▄▄▀░░░░░░░░█░░░▒▒▒▒▒░█\r\n█░▒█░█▀▄▄░░░░░█▀░░░░▀▄░░▄▀▀▀▄▒█\r\n░█░▀▄░█▄░█▀▄▄░▀░▀▀░▄▄▀░░░░█░░█░\r\n░░█░░░▀▄▀█▄▄░█▀▀▀▄▄▄▄▀▀█▀██░█░░\r\n░░░█░░░░██░░▀█▄▄▄█▄▄█▄████░█░░░\r\n░░░░█░░░░▀▀▄░█░░░█░█▀██████░█░░\r\n░░░░░▀▄░░░░░▀▀▄▄▄█▄█▄█▄█▄▀░░█░░\r\n░░░░░░░▀▄▄░▒▒▒▒░░░░░░░░░░▒░░░█░\r\n░░░░░░░░░░▀▀▄▄░▒▒▒▒▒▒▒▒▒▒░░░░█░\r\n░░░░░░░░░░░░░░▀▄▄▄▄▄░░░░░░░░█░░");
             Thread.Sleep(1600);
-            Console.WriteLine(" hi, im the travelling merchant and i just so happen to appear every time you defeat an enemy");
+            Console.WriteLine(" heyo, im the travelling merchant and i just so happen to appear every time you defeat an enemy");
             Thread.Sleep(1600);
-            Console.WriteLine(" here's what i'm selling, you only get one item by the way, i'm very limited on stock");
+            Console.WriteLine(" here's what i'm selling, i'm very limited on stock so i'm only letting you buy one thing");
             Thread.Sleep(1200);
             gold_change(0);
             Thread.Sleep(500);
@@ -487,7 +489,7 @@ namespace Text_Adventure
                     case 'z':
                         if (gold > (int)(400 * progress * 0.5f))
                         {
-                            Console.WriteLine(" You gained 100 max health");
+                            Console.WriteLine(" Your health went up by 100");
                             Thread.Sleep(500);
                             player.max_hp += 100;
                             gold -= (int)(400 * progress * 0.5f);
@@ -496,7 +498,7 @@ namespace Text_Adventure
                         }
                         else
                         {
-                            Console.WriteLine(" Not enough gold...");
+                            Console.WriteLine(" sorry bud ya don't got enough gold...");
                             Console.WriteLine(" ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒");
                             new_enemy();
                         }
@@ -504,7 +506,7 @@ namespace Text_Adventure
                     case 'x':
                         if (gold > (int)(400 * progress * 0.5f))
                         {
-                            Console.WriteLine(" You gained 50 damage");
+                            Console.WriteLine(" Your damage went up by 50");
                             Thread.Sleep(500);
                             player.damage += 50;
                             gold -= (int)(400 * progress * 0.5f);
@@ -514,7 +516,7 @@ namespace Text_Adventure
                         }
                         else
                         {
-                            Console.WriteLine(" Not enough gold...");
+                            Console.WriteLine(" sorry bud ya don't got enough gold...");
                             Console.WriteLine(" ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒");
                             new_enemy();
                         }
@@ -551,12 +553,15 @@ namespace Text_Adventure
             */
 
             // ----------- ARRAY
+            /* string[] animals = {"cat", "dog", "mouse", "fish", "bird"};
+               
+               for (int i = 0; i < movies.Length; i++)
+               {
+                    Console.WriteLine("this animal (" + animals[i] + ") is on this index in the array: " + i);
+               }
 
-
+            */
             // ------------ LOOPS
-
-            // ------------- DEBUGGING
-
         }
     }
 }
